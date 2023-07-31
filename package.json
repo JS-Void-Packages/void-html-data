@@ -1,0 +1,16 @@
+{
+  "name": "void-html-data",
+  "version": "1.0.0",
+  "description": "Let you insert variables into your HTML",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Variables",
+    "HTML",
+    "data"
+  ],
+  "author": "Mrthomas20121",
+  "license": "MIT"
+}
