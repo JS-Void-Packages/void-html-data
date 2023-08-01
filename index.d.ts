@@ -1,3 +1,5 @@
+import 'node:buffer';
+
 /**
  * convert an HTML file data into a file
  * @param file the file you want to modify
