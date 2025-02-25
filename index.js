@@ -16,19 +16,32 @@ let replaceAll = (base_string, to_replace, replace_by) => {
 }
 
 /**
- * 
+ * replace data in the html file
  * @param {string} file 
  * @param {{}} obj 
  * @param {string|'utf-8'} encoding
  */
-let parseHTML = (file, output, obj={}, encoding='utf-8') => {
-    let file_data = fs.readFileSync(file, encoding);
+function parseFile(file, output, obj={}, encoding='utf-8') {
+    fs.writeFileSync(output, parseData(fs.readFileSync(file, encoding), obj), encoding);
+}
+
+/**
+ * replace data in the html file
+ * @param {string} fileData 
+ * @param {{}} obj 
+ * @param {string|'utf-8'} encoding
+ * @returns {string}
+ */
+function parseData(fileData, obj={}) {
+    let endData = fileData;
     for(let data of Object.keys(obj)) {
-        file_data = replaceAll(file_data, `{{ ${data} }}`, obj[data]);
+        endData = replaceAll(endData, `{{ ${data} }}`, obj[data]);
     }
-    fs.writeFileSync(output, file_data, encoding);
+    return endData;
 }
 
 module.exports = {
-    parseHTML: parseHTML
+    parseFile,
+    parseData
+    
 }
