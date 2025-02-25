@@ -1,7 +1,7 @@
 # Void HTML Data
 Void HTML Data is a way to add data to an html file.
 
-to get this to work, you need to add `{{ variable_name }}` to parts of your html where it will be replaced by a value of your choosing.
+to get started, add variables like this `{{ variable_name }}` in your html, use void HTML Data to replace those variables with values, you're done.
 
 example : 
 ```html
@@ -17,11 +17,17 @@ example :
 
 ```js
 const { parseHTML } = require('void-html-data');
+const { readFileSync } = require('fs');
 
-parseHTML('./test.html', './test_final.html', { title:'Hello There!', nav:'<nav>Nav</nav>', footer:'<div><p>footer</p></div>' });
+// replace data then put it in test_final.html
+parseFile('./test.html', './test_final.html', { title:'Hello there!', nav:'<nav>Nav</nav>', footer:'<div><p>footer</p></div>' });
+
+// replace data then log it
+let data = parseData(readFileSync('./test.html', 'utf8'), { title:'Hello there!', nav:'<nav>Nav</nav>', footer:'<div><p>footer</p></div>' });
+console.log(data);
 ```
 
 this example will replace title with 'Hello There!', nav with `<nav>Nav</nav>` and footer with `<div><p>footer</p></div>`.
 
-## language?
-You should be able to name the variables with any letters you want as long as it is supported by javascript.
+## does this work with other letter or symbol not supported by utf8?
+yes, just make sure to change the encoding of `parseFile`
