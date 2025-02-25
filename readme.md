@@ -16,7 +16,7 @@ example :
 ```
 
 ```js
-const { parseHTML } = require('void-html-data');
+const { parseFile, parseData } = require('void-html-data');
 const { readFileSync } = require('fs');
 
 // replace data then put it in test_final.html
