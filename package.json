@@ -1,10 +1,14 @@
 {
   "name": "void-html-data",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Let you insert variables into your HTML",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JS-Void-Packages/void-html-data.git"
   },
   "keywords": [
     "Variables",
